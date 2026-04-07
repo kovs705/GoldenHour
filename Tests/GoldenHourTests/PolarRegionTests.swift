@@ -1,3 +1,11 @@
+//
+//  PolarRegionTests.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import CoreLocation
 import XCTest
 @testable import GoldenHour
@@ -10,7 +18,8 @@ final class PolarRegionTests: XCTestCase {
   func testTromsoMidnightSun() {
     let tromso = CLLocationCoordinate2D(latitude: 69.6496, longitude: 18.9560)
     let tz = TimeZone(identifier: "Europe/Oslo")!
-    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
+    // Must use June 21 — midnight sun in Tromso runs ~May 20 to July 22
+    let date = makeDate(year: 2026, month: 6, day: 21, timeZone: tz)
 
     let events = calculator.events(for: date, at: tromso, timeZone: tz)
 

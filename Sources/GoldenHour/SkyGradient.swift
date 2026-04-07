@@ -1,3 +1,11 @@
+//
+//  SkyGradient.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import SwiftUI
 
 /// A sky gradient representing the colors of the sky for a given sun position.

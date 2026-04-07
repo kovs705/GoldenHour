@@ -1,3 +1,11 @@
+//
+//  SkyColorPalette.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import Foundation
 
 /// An RGB color with components in [0, 1].

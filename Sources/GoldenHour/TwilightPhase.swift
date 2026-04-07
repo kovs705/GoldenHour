@@ -1,3 +1,11 @@
+//
+//  TwilightPhase.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import Foundation
 
 /// Classifies the current solar illumination phase based on sun altitude.

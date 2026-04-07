@@ -1,3 +1,11 @@
+//
+//  SolarPosition.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import Foundation
 
 /// The sun's position in the sky at a specific instant.

@@ -1,3 +1,11 @@
+//
+//  SolarEvents.swift
+//  GoldenHour
+//
+//  Created by Eugene Kovs on 07.04.2026.
+//  https://github.com/kovs705
+//
+
 import Foundation
 
 /// All sun event times for a single calendar day at a specific location.
