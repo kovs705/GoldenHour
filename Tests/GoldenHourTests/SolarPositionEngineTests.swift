@@ -9,8 +9,8 @@ final class SolarPositionEngineTests: XCTestCase {
   func testNYCSolarNoonAltitude() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
 
-    // March 20, 2024 ~17:00 UTC is approximately solar noon for NYC
-    let date = makeUTCDate(year: 2024, month: 3, day: 20, hour: 17, minute: 0)
+    // March 20, 2026 ~17:00 UTC is approximately solar noon for NYC
+    let date = makeUTCDate(year: 2026, month: 3, day: 20, hour: 17, minute: 0)
     let pos = SolarPositionEngine.position(at: date, coordinate: nyc)
 
     // Sun altitude at noon on equinox should be approximately 90 - latitude
@@ -23,7 +23,7 @@ final class SolarPositionEngineTests: XCTestCase {
   /// At midnight UTC, sun should be below horizon for NYC.
   func testNYCMidnightBelowHorizon() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
-    let date = makeUTCDate(year: 2024, month: 6, day: 21, hour: 4, minute: 0)
+    let date = makeUTCDate(year: 2026, month: 4, day: 6, hour: 4, minute: 0)
 
     let pos = SolarPositionEngine.position(at: date, coordinate: nyc)
 
@@ -39,7 +39,7 @@ final class SolarPositionEngineTests: XCTestCase {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
 
     // Approximate sunrise time: March 20, ~11:00 UTC
-    let sunriseDate = makeUTCDate(year: 2024, month: 3, day: 20, hour: 11, minute: 0)
+    let sunriseDate = makeUTCDate(year: 2026, month: 3, day: 20, hour: 11, minute: 0)
     let srPos = SolarPositionEngine.position(at: sunriseDate, coordinate: nyc)
     XCTAssertTrue(
       srPos.azimuth > 60 && srPos.azimuth < 120,
@@ -47,7 +47,7 @@ final class SolarPositionEngineTests: XCTestCase {
     )
 
     // Approximate sunset time: March 20, ~23:08 UTC
-    let sunsetDate = makeUTCDate(year: 2024, month: 3, day: 20, hour: 23, minute: 8)
+    let sunsetDate = makeUTCDate(year: 2026, month: 3, day: 20, hour: 23, minute: 8)
     let ssPos = SolarPositionEngine.position(at: sunsetDate, coordinate: nyc)
     XCTAssertTrue(
       ssPos.azimuth > 240 && ssPos.azimuth < 300,
@@ -59,7 +59,7 @@ final class SolarPositionEngineTests: XCTestCase {
   func testEquatorEquinoxNoon() {
     let equator = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     // March 20, 12:00 UTC — solar noon at longitude 0
-    let date = makeUTCDate(year: 2024, month: 3, day: 20, hour: 12, minute: 0)
+    let date = makeUTCDate(year: 2026, month: 3, day: 20, hour: 12, minute: 0)
     let pos = SolarPositionEngine.position(at: date, coordinate: equator)
 
     XCTAssertTrue(

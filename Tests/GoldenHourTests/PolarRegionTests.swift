@@ -10,7 +10,7 @@ final class PolarRegionTests: XCTestCase {
   func testTromsoMidnightSun() {
     let tromso = CLLocationCoordinate2D(latitude: 69.6496, longitude: 18.9560)
     let tz = TimeZone(identifier: "Europe/Oslo")!
-    let date = makeDate(year: 2024, month: 6, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
 
     let events = calculator.events(for: date, at: tromso, timeZone: tz)
 
@@ -24,7 +24,7 @@ final class PolarRegionTests: XCTestCase {
   func testTromsoPolarNight() {
     let tromso = CLLocationCoordinate2D(latitude: 69.6496, longitude: 18.9560)
     let tz = TimeZone(identifier: "Europe/Oslo")!
-    let date = makeDate(year: 2024, month: 12, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 12, day: 6, timeZone: tz)
 
     let events = calculator.events(for: date, at: tromso, timeZone: tz)
 
@@ -66,7 +66,7 @@ final class PolarRegionTests: XCTestCase {
     var calendar = Calendar(identifier: .gregorian)
     calendar.timeZone = TimeZone(identifier: "UTC")!
     var comps = DateComponents()
-    comps.year = 2024
+    comps.year = 2026
     comps.month = 12
     comps.day = 21
     comps.hour = 11
@@ -88,7 +88,7 @@ final class PolarRegionTests: XCTestCase {
   func testReykjavikEquinox() {
     let reykjavik = CLLocationCoordinate2D(latitude: 64.1466, longitude: -21.9426)
     let tz = TimeZone(identifier: "Atlantic/Reykjavik")!
-    let date = makeDate(year: 2024, month: 3, day: 20, timeZone: tz)
+    let date = makeDate(year: 2026, month: 3, day: 20, timeZone: tz)
 
     let events = calculator.events(for: date, at: reykjavik, timeZone: tz)
 

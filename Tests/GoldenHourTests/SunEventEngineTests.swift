@@ -6,12 +6,12 @@ final class SunEventEngineTests: XCTestCase {
 
   // MARK: - Known value tests
 
-  /// Test sunrise/sunset for NYC on March 20, 2024 (spring equinox).
+  /// Test sunrise/sunset for NYC on March 20, 2026 (spring equinox).
   /// Expected (from NOAA): sunrise ~10:59 UTC, sunset ~23:08 UTC
   func testNYCSpringEquinox() throws {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
     let tz = TimeZone(identifier: "America/New_York")!
-    let date = makeDate(year: 2024, month: 3, day: 20, timeZone: tz)
+    let date = makeDate(year: 2026, month: 3, day: 20, timeZone: tz)
 
     let sunrise = SunEventEngine.eventTime(
       type: .rise, date: date, coordinate: nyc,
@@ -36,12 +36,12 @@ final class SunEventEngineTests: XCTestCase {
     XCTAssertTrue(abs((ssComps.minute ?? 0) - 8) < 5, "Sunset minute off by more than 5")
   }
 
-  /// Test for Sydney, Australia (southern hemisphere) on June 21, 2024 (winter solstice).
+  /// Test for Sydney, Australia (southern hemisphere) on June 21, 2026 (winter solstice).
   /// Expected: sunrise ~20:53 UTC (prev day), sunset ~07:53 UTC
   func testSydneyWinterSolstice() throws {
     let sydney = CLLocationCoordinate2D(latitude: -33.8688, longitude: 151.2093)
     let tz = TimeZone(identifier: "Australia/Sydney")!
-    let date = makeDate(year: 2024, month: 6, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
 
     let sunrise = SunEventEngine.eventTime(
       type: .rise, date: date, coordinate: sydney,
@@ -63,7 +63,7 @@ final class SunEventEngineTests: XCTestCase {
 
     // Test multiple dates throughout the year
     for month in [1, 4, 7, 10] {
-      let date = makeDate(year: 2024, month: month, day: 15, timeZone: tz)
+      let date = makeDate(year: 2026, month: month, day: 15, timeZone: tz)
 
       let sunrise = SunEventEngine.eventTime(
         type: .rise, date: date, coordinate: singapore,

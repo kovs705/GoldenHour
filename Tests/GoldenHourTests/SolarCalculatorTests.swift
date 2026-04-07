@@ -11,7 +11,7 @@ final class SolarCalculatorTests: XCTestCase {
   func testEventsReturnsAllTimesForNYC() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
     let tz = TimeZone(identifier: "America/New_York")!
-    let date = makeDate(year: 2024, month: 6, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
 
     let events = calculator.events(for: date, at: nyc, timeZone: tz)
 
@@ -40,7 +40,7 @@ final class SolarCalculatorTests: XCTestCase {
   func testEventOrderingMakeSense() throws {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
     let tz = TimeZone(identifier: "America/New_York")!
-    let date = makeDate(year: 2024, month: 6, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
 
     let events = calculator.events(for: date, at: nyc, timeZone: tz)
 
@@ -62,7 +62,7 @@ final class SolarCalculatorTests: XCTestCase {
   func testGoldenHourContainsSunrise() throws {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
     let tz = TimeZone(identifier: "America/New_York")!
-    let date = makeDate(year: 2024, month: 6, day: 21, timeZone: tz)
+    let date = makeDate(year: 2026, month: 4, day: 6, timeZone: tz)
 
     let events = calculator.events(for: date, at: nyc, timeZone: tz)
 
@@ -92,7 +92,7 @@ final class SolarCalculatorTests: XCTestCase {
 
   func testPhaseAtNoonIsDay() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
-    let date = makeUTCDate(year: 2024, month: 6, day: 21, hour: 17, minute: 0)
+    let date = makeUTCDate(year: 2026, month: 4, day: 6, hour: 17, minute: 0)
 
     let phase = calculator.phase(at: date, coordinate: nyc)
 
@@ -102,7 +102,7 @@ final class SolarCalculatorTests: XCTestCase {
   func testPhaseAtMidnightIsNight() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
     // Midnight EDT = 4:00 UTC
-    let date = makeUTCDate(year: 2024, month: 6, day: 21, hour: 4, minute: 0)
+    let date = makeUTCDate(year: 2026, month: 4, day: 6, hour: 4, minute: 0)
 
     let phase = calculator.phase(at: date, coordinate: nyc)
 
@@ -116,7 +116,7 @@ final class SolarCalculatorTests: XCTestCase {
 
   func testGradientReturns32Colors() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
-    let date = makeUTCDate(year: 2024, month: 6, day: 21, hour: 17, minute: 0)
+    let date = makeUTCDate(year: 2026, month: 4, day: 6, hour: 17, minute: 0)
 
     let gradient = calculator.gradient(at: date, coordinate: nyc)
 
@@ -128,8 +128,8 @@ final class SolarCalculatorTests: XCTestCase {
   func testGradientDiffersForDayAndNight() {
     let nyc = CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.006)
 
-    let dayDate = makeUTCDate(year: 2024, month: 6, day: 21, hour: 17, minute: 0)
-    let nightDate = makeUTCDate(year: 2024, month: 6, day: 21, hour: 4, minute: 0)
+    let dayDate = makeUTCDate(year: 2026, month: 4, day: 6, hour: 17, minute: 0)
+    let nightDate = makeUTCDate(year: 2026, month: 4, day: 6, hour: 4, minute: 0)
 
     let dayGradient = calculator.gradient(at: dayDate, coordinate: nyc)
     let nightGradient = calculator.gradient(at: nightDate, coordinate: nyc)
