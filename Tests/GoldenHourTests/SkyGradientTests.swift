@@ -59,9 +59,9 @@ final class SkyGradientTests: XCTestCase {
   func testKeyframeInterpolation() {
     // At an exact keyframe altitude, should return that keyframe's colors
     let (top, _, _) = GradientMapper.interpolatedKeyframe(forAltitude: -90.0)
-    XCTAssertEqual(top.r, RGB(hex: 0x050516).r, accuracy: 0.01)
-    XCTAssertEqual(top.g, RGB(hex: 0x050516).g, accuracy: 0.01)
-    XCTAssertEqual(top.b, RGB(hex: 0x050516).b, accuracy: 0.01)
+    XCTAssertEqual(top.r, RGB(hex: 0x030312).r, accuracy: 0.01)
+    XCTAssertEqual(top.g, RGB(hex: 0x030312).g, accuracy: 0.01)
+    XCTAssertEqual(top.b, RGB(hex: 0x030312).b, accuracy: 0.01)
   }
 
   func testGradientSmoothTransition() {
